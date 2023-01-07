@@ -43,6 +43,7 @@ Ahora nos toca ver el estado del repo tras haber modificado el .gitignore.
     git add .
     ```
     - Commiteamos, siempre con mensaje
+
     ```bash
     git commit -m "subiendo proyecto con README y .gitignore"
     ```
@@ -59,4 +60,60 @@ git commit --amend -m "..."
 ```
 Si le quiero cambiar el mensaje.
 
-9. 
+9. Para verificar que el cambio se ha realizado sobre el mismo commit, o ver el historial de commits del proyecto tenemos el siguiente comando:
+
+```bash
+git log --oneline
+```
+    Esta es un log antes del amend:
+    ![](img/8.png)
+
+    Luego del amend:
+    ![](img/9.png)
+
+    Como vemos, cambia el hash del commit.    
+
+10. Pusheamos el proyecto por primera vez.
+
+    1. Sincronizar con el repo remoto.
+
+    ```bash
+    git remote add origin (URL github)
+    ```
+    2. subirlo:
+
+    ```bash
+    git push -u origin master
+    ```
+
+11. Ahora simularemos que otra persona se implica en el proyecto y hace modificaciones.
+
+   - Lo primero que tenemos que hacer es clonar el proyecto desde github a su local:
+    ```bash
+    git clone https://github.com/LuchoMartinez1/Git-Tutorial.git
+    ```
+
+   - Creamos una rama para hacer un cambio o desarrollar en Intellij:
+
+    ```bash
+    git checkout -b change-code
+    ```
+        "chekout" para salir de master y "-b" (branch) para crear la rama nueva. 
+
+   - Modificamos el código tal como se ve en el commit.
+
+   - Nos preparamos para hacer merge a master.
+
+   ![](img/9.png)
+
+   - Realizamos el merge sin conflictos.
+
+   ```bash
+    git merge change-code
+   ```
+
+   - Por último avanzo en este README y pusheo ambas ramas, en este caso no hace falta añadir el remoto ya que se sincroniza al hacer el clone.
+
+   ```bash
+    git push -u origin --all
+   ```
