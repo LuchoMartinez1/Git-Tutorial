@@ -21,9 +21,9 @@ public class Discriminante {
             double x1=((b*(-1))+Math.sqrt(discriminante))/(2*a);
             double x2=((b*(-1))-Math.sqrt(discriminante))/(2*a);
 
-            System.out.println("El valor de x1 es "+x1+" y el valor de x2 es "+x2);
+            JOptionPane.showMessageDialog(null,"El valor de x1 es "+x1+" y el valor de x2 es "+x2);
         }else{
-            System.out.println("El discriminante es negativo");
+            JOptionPane.showMessageDialog(null,"El discriminante es negativo");
         }
     }
 }
