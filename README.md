@@ -59,4 +59,33 @@ git commit --amend -m "..."
 ```
 Si le quiero cambiar el mensaje.
 
-9. 
+9. Para verificar que el cambio se ha realizado sobre el mismo commit, o ver el historial de commits del proyecto tenemos el siguiente comando:
+
+```bash
+git log --oneline
+```
+    Esta es un log antes del amend:
+    ![](img/8.png)
+
+    Luego del amend:
+    ![](img/9.png)
+
+    Como vemos, cambia el hash del commit.    
+
+10. Pusheamos el proyecto por primera vez.
+
+    1. Sincronizar con el repo remoto.
+    ```bash
+    git remote add origin (URL github)
+    ```
+    2. subirlo:
+    ```bash
+    git push -u origin master
+    ```
+
+11. Ahora simularemos que otra persona se implica en el proyecto y hace modificaciones.
+   - Lo primero que tendrá que hacer es clonar el proyecto desde github a su local:
+    ```bash
+    git clone https://github.com/LuchoMartinez1/Git-Tutorial.git
+    ```
+   - 
